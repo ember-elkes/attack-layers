@@ -6,29 +6,31 @@
 		"layer": "4.5"
 	},
 	"domain": "enterprise-attack",
-	"description": "Score scale — Campaign Corroboration\n   1 = Group-level attribution only (MITRE G0007 / vendor reporting)\n   2 = Confirmed in 1 primary campaign\n   3 = Confirmed in 2 primary campaigns\n   4 = Confirmed in 3+ primary campaigns",
+	"description": "Score scale — Campaign Corroboration\n   1 = Group-level attribution only (MITRE G0007 / vendor reporting)\n   2 = Confirmed in 1 primary campaign\n   3 = Confirmed in 2 primary campaigns\n   4 = Confirmed in all 3 primary campaigns (Nearest Neighbor,\n       Bundestag Intrusion, LAMEHUG)\n  ",
 	"filters": {
 		"platforms": [
 			"Windows",
-			"macOS",
-			"Office Suite",
-			"Identity Provider",
-			"Linux",
 			"IaaS",
+			"Linux",
+			"macOS",
+			"SaaS",
+			"ESXi",
 			"Network Devices",
 			"PRE",
-			"Containers"
+			"Containers",
+			"Office Suite",
+			"Identity Provider"
 		]
 	},
 	"sorting": 0,
 	"layout": {
 		"layout": "side",
-		"aggregateFunction": "sum",
+		"aggregateFunction": "average",
 		"showID": true,
 		"showName": true,
-		"showAggregateScores": false,
+		"showAggregateScores": true,
 		"countUnscored": false,
-		"expandedSubtechniques": "annotated"
+		"expandedSubtechniques": "all"
 	},
 	"hideDisabled": false,
 	"techniques": [
@@ -46,18 +48,29 @@
 		{
 			"techniqueID": "T1037",
 			"tactic": "persistence",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1037",
 			"tactic": "privilege-escalation",
-			"score": 0,
+			"score": 1,
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1037.004",
+			"tactic": "persistence",
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -67,19 +80,8 @@
 		},
 		{
 			"techniqueID": "T1037.004",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1037.004",
 			"tactic": "privilege-escalation",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -88,114 +90,34 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1037.001",
-			"tactic": "persistence",
-			"score": 0,
+			"techniqueID": "T1557",
+			"tactic": "credential-access",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1037.001",
-			"tactic": "privilege-escalation",
-			"score": 0,
+			"techniqueID": "T1557",
+			"tactic": "collection",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1037.003",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1037.003",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1037.005",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1037.005",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1037.002",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1037.002",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1583",
 			"tactic": "resource-development",
-			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1583.008",
-			"tactic": "resource-development",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1583.001",
@@ -209,88 +131,42 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1583.005",
-			"tactic": "resource-development",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1583.004",
-			"tactic": "resource-development",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1583.002",
-			"tactic": "resource-development",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1583.003",
-			"tactic": "resource-development",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1583.007",
-			"tactic": "resource-development",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
 			"techniqueID": "T1583.006",
 			"tactic": "resource-development",
-			"score": 3,
+			"score": 1,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1592",
+			"tactic": "reconnaissance",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1003",
 			"tactic": "credential-access",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1003.002",
 			"tactic": "credential-access",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -299,9 +175,9 @@
 		{
 			"techniqueID": "T1003.004",
 			"tactic": "credential-access",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -319,59 +195,34 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1003.007",
-			"tactic": "credential-access",
-			"score": 2,
+			"techniqueID": "T1602",
+			"tactic": "collection",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1003.003",
-			"tactic": "credential-access",
-			"score": 2,
+			"techniqueID": "T1543",
+			"tactic": "persistence",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1003.005",
-			"tactic": "credential-access",
-			"score": 2,
+			"techniqueID": "T1543",
+			"tactic": "privilege-escalation",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1003.001",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1003.008",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1133",
@@ -407,6 +258,16 @@
 			"showSubtechniques": false
 		},
 		{
+			"techniqueID": "T1578",
+			"tactic": "defense-impairment",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
 			"techniqueID": "T1069",
 			"tactic": "discovery",
 			"score": 2,
@@ -415,18 +276,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1069.003",
-			"tactic": "discovery",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1069.002",
@@ -440,196 +290,60 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1069.001",
-			"tactic": "discovery",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
 			"techniqueID": "T1114",
 			"tactic": "collection",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1114.002",
 			"tactic": "collection",
-			"score": 0,
+			"score": 2,
 			"color": "",
-			"comment": "",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1114.003",
-			"tactic": "collection",
-			"score": 0,
+			"techniqueID": "T1561",
+			"tactic": "impact",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1114.001",
-			"tactic": "collection",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1547",
 			"tactic": "persistence",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1547",
 			"tactic": "privilege-escalation",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.009",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.009",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.006",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.006",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.007",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.007",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.004",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.004",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.005",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.005",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1547.001",
 			"tactic": "persistence",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -640,7 +354,7 @@
 		{
 			"techniqueID": "T1547.001",
 			"tactic": "privilege-escalation",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -649,235 +363,44 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1547.008",
+			"techniqueID": "T1600",
+			"tactic": "defense-impairment",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1564",
+			"tactic": "stealth",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1137",
 			"tactic": "persistence",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.008",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.012",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.012",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.014",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.014",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.015",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.015",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.013",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.013",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.003",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.003",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.002",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.002",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.010",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1547.010",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1071",
 			"tactic": "command-and-control",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1071.002",
-			"tactic": "command-and-control",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1071.004",
-			"tactic": "command-and-control",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1071.005",
-			"tactic": "command-and-control",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1071.003",
-			"tactic": "command-and-control",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1071.001",
@@ -893,68 +416,32 @@
 		{
 			"techniqueID": "T1053",
 			"tactic": "execution",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1053",
 			"tactic": "persistence",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1053",
 			"tactic": "privilege-escalation",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1053.003",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1053.003",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1053.003",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1053.005",
@@ -990,108 +477,19 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1053.006",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1053.006",
+			"techniqueID": "T1176",
 			"tactic": "persistence",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1053.006",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1053.007",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1053.007",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1053.007",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1053.002",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1053.002",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1053.002",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1005",
 			"tactic": "collection",
-			"score": 2,
+			"score": 1,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -1102,7 +500,7 @@
 		{
 			"techniqueID": "T1140",
 			"tactic": "stealth",
-			"score": 2,
+			"score": 1,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -1113,38 +511,15 @@
 		{
 			"techniqueID": "T1195",
 			"tactic": "initial-access",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1195.001",
-			"tactic": "initial-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1195.002",
-			"tactic": "initial-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1195.003",
 			"tactic": "initial-access",
 			"score": 2,
 			"color": "",
@@ -1168,60 +543,15 @@
 		{
 			"techniqueID": "T1558",
 			"tactic": "credential-access",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1558.003",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1558.002",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1558.005",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1558.004",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1558.001",
 			"tactic": "credential-access",
 			"score": 2,
 			"color": "",
@@ -1240,51 +570,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1555.004",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1555.001",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1555.005",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1555.006",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1555.003",
@@ -1298,73 +584,47 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1555.002",
-			"tactic": "credential-access",
-			"score": 2,
+			"techniqueID": "T1567",
+			"tactic": "exfiltration",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1219",
+			"tactic": "command-and-control",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1684",
+			"tactic": "stealth",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1036",
 			"tactic": "stealth",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1036.008",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1036.003",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1036.006",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1036.004",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1036.002",
 			"tactic": "stealth",
 			"score": 2,
 			"color": "",
@@ -1386,92 +646,14 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1036.011",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1036.007",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1036.010",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1036.001",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1036.012",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1036.009",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
 			"techniqueID": "T1552",
 			"tactic": "credential-access",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1552.006",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1552.004",
@@ -1485,187 +667,71 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1552.007",
-			"tactic": "credential-access",
-			"score": 2,
+			"techniqueID": "T1055",
+			"tactic": "stealth",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1552.001",
-			"tactic": "credential-access",
-			"score": 2,
+			"techniqueID": "T1055",
+			"tactic": "privilege-escalation",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1552.002",
-			"tactic": "credential-access",
-			"score": 2,
+			"techniqueID": "T1205",
+			"tactic": "stealth",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1552.003",
-			"tactic": "credential-access",
-			"score": 2,
+			"techniqueID": "T1205",
+			"tactic": "persistence",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1552.008",
-			"tactic": "credential-access",
-			"score": 2,
+			"techniqueID": "T1205",
+			"tactic": "command-and-control",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1552.005",
-			"tactic": "credential-access",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1218",
 			"tactic": "stealth",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1218.005",
 			"tactic": "stealth",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.014",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.008",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.015",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.012",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.013",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.002",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.001",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.010",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.004",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -1673,39 +739,6 @@
 		},
 		{
 			"techniqueID": "T1218.011",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.009",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.003",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1218.007",
 			"tactic": "stealth",
 			"score": 2,
 			"color": "",
@@ -1724,7 +757,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1550.004",
@@ -1751,57 +784,33 @@
 		{
 			"techniqueID": "T1550.003",
 			"tactic": "lateral-movement",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1550.002",
-			"tactic": "lateral-movement",
-			"score": 2,
+			"techniqueID": "T1011",
+			"tactic": "exfiltration",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1589",
 			"tactic": "reconnaissance",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1589.003",
-			"tactic": "reconnaissance",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1589.002",
-			"tactic": "reconnaissance",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1589.001",
@@ -1817,24 +826,12 @@
 		{
 			"techniqueID": "T1560",
 			"tactic": "collection",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1560.002",
-			"tactic": "collection",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1560.001",
@@ -1848,40 +845,17 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1560.003",
-			"tactic": "collection",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
 			"techniqueID": "T1021",
 			"tactic": "lateral-movement",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1021.006",
-			"tactic": "lateral-movement",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1021.005",
 			"tactic": "lateral-movement",
 			"score": 2,
 			"color": "",
@@ -1905,9 +879,9 @@
 		{
 			"techniqueID": "T1021.007",
 			"tactic": "lateral-movement",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -1925,75 +899,59 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1021.003",
-			"tactic": "lateral-movement",
-			"score": 2,
+			"techniqueID": "T1596",
+			"tactic": "reconnaissance",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1021.008",
-			"tactic": "lateral-movement",
-			"score": 2,
+			"techniqueID": "T1491",
+			"tactic": "impact",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1021.004",
+			"techniqueID": "T1563",
 			"tactic": "lateral-movement",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1222",
+			"tactic": "defense-impairment",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1595",
 			"tactic": "reconnaissance",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1595.003",
-			"tactic": "reconnaissance",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1595.001",
-			"tactic": "reconnaissance",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1595.002",
 			"tactic": "reconnaissance",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -2004,73 +962,17 @@
 		{
 			"techniqueID": "T1548",
 			"tactic": "privilege-escalation",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1548.001",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1548.005",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1548.002",
 			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1548.004",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1548.003",
-			"tactic": "privilege-escalation",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1548.006",
-			"tactic": "privilege-escalation",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -2081,24 +983,12 @@
 		{
 			"techniqueID": "T1016",
 			"tactic": "discovery",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1016.002",
-			"tactic": "discovery",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1016.001",
@@ -2120,25 +1010,14 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1087.003",
-			"tactic": "discovery",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1087.004",
 			"tactic": "discovery",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -2156,26 +1035,14 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1087.001",
-			"tactic": "discovery",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
 			"techniqueID": "T1090",
 			"tactic": "command-and-control",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1090.001",
@@ -2191,9 +1058,9 @@
 		{
 			"techniqueID": "T1090.003",
 			"tactic": "command-and-control",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -2202,9 +1069,9 @@
 		{
 			"techniqueID": "T1090.004",
 			"tactic": "command-and-control",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -2213,9 +1080,9 @@
 		{
 			"techniqueID": "T1090.002",
 			"tactic": "command-and-control",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -2224,27 +1091,15 @@
 		{
 			"techniqueID": "T1059",
 			"tactic": "execution",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1059.005",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1059.002",
 			"tactic": "execution",
 			"score": 2,
 			"color": "",
@@ -2266,66 +1121,11 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1059.013",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1059.004",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1059.010",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1059.008",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1059.012",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
 			"techniqueID": "T1059.006",
 			"tactic": "execution",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -2345,31 +1145,9 @@
 		{
 			"techniqueID": "T1059.009",
 			"tactic": "execution",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1059.011",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1059.007",
-			"tactic": "execution",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -2387,20 +1165,30 @@
 			"showSubtechniques": false
 		},
 		{
+			"techniqueID": "T1020",
+			"tactic": "exfiltration",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
 			"techniqueID": "T1070",
 			"tactic": "stealth",
-			"score": 2,
+			"score": 1,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1070.004",
 			"tactic": "stealth",
-			"score": 2,
+			"score": 1,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -2411,7 +1199,7 @@
 		{
 			"techniqueID": "T1070.006",
 			"tactic": "stealth",
-			"score": 2,
+			"score": 1,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -2422,62 +1210,7 @@
 		{
 			"techniqueID": "T1070.008",
 			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1070.009",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1070.003",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1070.010",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1070.007",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1070.005",
-			"tactic": "stealth",
-			"score": 2,
+			"score": 1,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -2505,67 +1238,22 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1568.001",
-			"tactic": "command-and-control",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1568.002",
-			"tactic": "command-and-control",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1568.003",
-			"tactic": "command-and-control",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1074",
 			"tactic": "collection",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1074.001",
-			"tactic": "collection",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1074.002",
 			"tactic": "collection",
-			"score": 2,
+			"score": 1,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -2576,7 +1264,7 @@
 		{
 			"techniqueID": "T1649",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -2587,90 +1275,12 @@
 		{
 			"techniqueID": "T1584",
 			"tactic": "resource-development",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1584.003",
-			"tactic": "resource-development",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1584.002",
-			"tactic": "resource-development",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1584.006",
-			"tactic": "resource-development",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1584.007",
-			"tactic": "resource-development",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1584.005",
-			"tactic": "resource-development",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1584.004",
-			"tactic": "resource-development",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1584.008",
-			"tactic": "resource-development",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1584.001",
@@ -2684,20 +1294,39 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1586",
-			"tactic": "resource-development",
-			"score": 0,
+			"techniqueID": "T1542",
+			"tactic": "stealth",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1542",
+			"tactic": "persistence",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1586",
+			"tactic": "resource-development",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1586.003",
 			"tactic": "resource-development",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -2708,7 +1337,7 @@
 		{
 			"techniqueID": "T1586.002",
 			"tactic": "resource-development",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -2717,48 +1346,34 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1586.001",
-			"tactic": "resource-development",
-			"score": 0,
+			"techniqueID": "T1497",
+			"tactic": "stealth",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1497",
+			"tactic": "discovery",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1102",
 			"tactic": "command-and-control",
-			"score": 2,
 			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1102.003",
-			"tactic": "command-and-control",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1102.001",
-			"tactic": "command-and-control",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1102.002",
@@ -2772,9 +1387,29 @@
 			"showSubtechniques": false
 		},
 		{
+			"techniqueID": "T1608",
+			"tactic": "resource-development",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1480",
+			"tactic": "stealth",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
 			"techniqueID": "T1528",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -2785,40 +1420,17 @@
 		{
 			"techniqueID": "T1204",
 			"tactic": "execution",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1204.005",
-			"tactic": "execution",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1204.002",
 			"tactic": "execution",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1204.003",
-			"tactic": "execution",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -2829,18 +1441,7 @@
 		{
 			"techniqueID": "T1204.001",
 			"tactic": "execution",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1204.004",
-			"tactic": "execution",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -2860,15 +1461,24 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1606",
-			"tactic": "credential-access",
-			"score": 2,
+			"techniqueID": "T1591",
+			"tactic": "reconnaissance",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1606",
+			"tactic": "credential-access",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1606.001",
@@ -2895,13 +1505,23 @@
 		{
 			"techniqueID": "T1621",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1590",
+			"tactic": "reconnaissance",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1199",
@@ -2915,20 +1535,39 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1098",
-			"tactic": "persistence",
-			"score": 2,
+			"techniqueID": "T1593",
+			"tactic": "reconnaissance",
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1098",
+			"tactic": "persistence",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1098",
 			"tactic": "privilege-escalation",
-			"score": 2,
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1098.001",
+			"tactic": "persistence",
+			"score": 3,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -2938,19 +1577,8 @@
 		},
 		{
 			"techniqueID": "T1098.001",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1098.001",
 			"tactic": "privilege-escalation",
-			"score": 2,
+			"score": 3,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -2961,7 +1589,7 @@
 		{
 			"techniqueID": "T1098.002",
 			"tactic": "persistence",
-			"score": 2,
+			"score": 3,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -2972,7 +1600,7 @@
 		{
 			"techniqueID": "T1098.002",
 			"tactic": "privilege-escalation",
-			"score": 2,
+			"score": 3,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -2983,7 +1611,7 @@
 		{
 			"techniqueID": "T1098.003",
 			"tactic": "persistence",
-			"score": 2,
+			"score": 3,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -2994,7 +1622,7 @@
 		{
 			"techniqueID": "T1098.003",
 			"tactic": "privilege-escalation",
-			"score": 2,
+			"score": 3,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -3005,7 +1633,7 @@
 		{
 			"techniqueID": "T1098.005",
 			"tactic": "persistence",
-			"score": 2,
+			"score": 3,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -3016,73 +1644,7 @@
 		{
 			"techniqueID": "T1098.005",
 			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1098.006",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1098.006",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1098.004",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1098.004",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1098.007",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1098.007",
-			"tactic": "privilege-escalation",
-			"score": 2,
+			"score": 3,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -3093,13 +1655,12 @@
 		{
 			"techniqueID": "T1048",
 			"tactic": "exfiltration",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1048.002",
@@ -3113,42 +1674,29 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1048.003",
-			"tactic": "exfiltration",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1048.001",
-			"tactic": "exfiltration",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1566",
-			"tactic": "initial-access",
-			"score": 0,
+			"techniqueID": "T1597",
+			"tactic": "reconnaissance",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1566",
+			"tactic": "initial-access",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1566.002",
 			"tactic": "initial-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -3159,18 +1707,7 @@
 		{
 			"techniqueID": "T1566.001",
 			"tactic": "initial-access",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1566.004",
-			"tactic": "initial-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -3181,7 +1718,7 @@
 		{
 			"techniqueID": "T1566.003",
 			"tactic": "initial-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -3192,40 +1729,17 @@
 		{
 			"techniqueID": "T1110",
 			"tactic": "credential-access",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1110.004",
-			"tactic": "credential-access",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1110.002",
-			"tactic": "credential-access",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1110.001",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -3236,7 +1750,7 @@
 		{
 			"techniqueID": "T1110.003",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -3245,37 +1759,34 @@
 			"showSubtechniques": false
 		},
 		{
+			"techniqueID": "T1565",
+			"tactic": "impact",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1559",
+			"tactic": "execution",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
 			"techniqueID": "T1001",
 			"tactic": "command-and-control",
-			"score": 2,
 			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1001.001",
-			"tactic": "command-and-control",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1001.003",
-			"tactic": "command-and-control",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1001.002",
@@ -3289,55 +1800,85 @@
 			"showSubtechniques": false
 		},
 		{
+			"techniqueID": "T1601",
+			"tactic": "defense-impairment",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1574",
+			"tactic": "stealth",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1574",
+			"tactic": "execution",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
 			"techniqueID": "T1078",
 			"tactic": "stealth",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1078",
 			"tactic": "persistence",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1078",
 			"tactic": "privilege-escalation",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1078",
 			"tactic": "initial-access",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1078.004",
 			"tactic": "stealth",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -3348,7 +1889,7 @@
 			"tactic": "persistence",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -3359,7 +1900,7 @@
 			"tactic": "privilege-escalation",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -3370,7 +1911,7 @@
 			"tactic": "initial-access",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -3425,7 +1966,7 @@
 			"tactic": "stealth",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -3436,7 +1977,7 @@
 			"tactic": "persistence",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -3447,7 +1988,7 @@
 			"tactic": "privilege-escalation",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -3458,51 +1999,7 @@
 			"tactic": "initial-access",
 			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1078.001",
-			"tactic": "stealth",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1078.001",
-			"tactic": "persistence",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1078.001",
-			"tactic": "privilege-escalation",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1078.001",
-			"tactic": "initial-access",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -3511,7 +2008,7 @@
 		{
 			"techniqueID": "T1068",
 			"tactic": "privilege-escalation",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -3522,141 +2019,19 @@
 		{
 			"techniqueID": "T1027",
 			"tactic": "stealth",
-			"score": 2,
 			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.005",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.009",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.013",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.012",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.017",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.018",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1027.006",
 			"tactic": "stealth",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.011",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.014",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.010",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.004",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.007",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -3674,44 +2049,11 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1027.015",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.016",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1027.008",
-			"tactic": "stealth",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
 			"techniqueID": "T1027.002",
 			"tactic": "stealth",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -3720,108 +2062,50 @@
 		{
 			"techniqueID": "T1027.001",
 			"tactic": "stealth",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1683",
+			"tactic": "resource-development",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1546",
 			"tactic": "privilege-escalation",
-			"score": 2,
 			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1546",
 			"tactic": "persistence",
-			"score": 2,
 			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.002",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.002",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.013",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.013",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.016",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.016",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1546.003",
 			"tactic": "privilege-escalation",
-			"score": 2,
+			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "Operation Ghost, Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -3830,295 +2114,9 @@
 		{
 			"techniqueID": "T1546.003",
 			"tactic": "persistence",
-			"score": 2,
+			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.006",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.006",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.018",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.018",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.011",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.011",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.015",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.015",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.004",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.004",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.010",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.010",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.005",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.005",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.007",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.007",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.012",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.012",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.001",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.001",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.009",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.009",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.017",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.017",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.014",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1546.014",
-			"tactic": "persistence",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "Operation Ghost, Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -4127,9 +2125,9 @@
 		{
 			"techniqueID": "T1546.008",
 			"tactic": "privilege-escalation",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -4138,31 +2136,40 @@
 		{
 			"techniqueID": "T1546.008",
 			"tactic": "persistence",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1599",
+			"tactic": "defense-impairment",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1553",
 			"tactic": "defense-impairment",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1553.005",
 			"tactic": "defense-impairment",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -4180,81 +2187,35 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1553.004",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1553.003",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1553.006",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1553.001",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
 			"techniqueID": "T1573",
 			"tactic": "command-and-control",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1573.002",
-			"tactic": "command-and-control",
-			"score": 0,
+			"techniqueID": "T1056",
+			"tactic": "collection",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1573.001",
-			"tactic": "command-and-control",
-			"score": 0,
+			"techniqueID": "T1056",
+			"tactic": "credential-access",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1685",
@@ -4265,14 +2226,14 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1685.002",
 			"tactic": "defense-impairment",
-			"score": 2,
+			"score": 1,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -4290,53 +2251,9 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1685.006",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1685.005",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1685.003",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1685.004",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
 			"techniqueID": "T1203",
 			"tactic": "execution",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -4345,37 +2262,64 @@
 			"showSubtechniques": false
 		},
 		{
+			"techniqueID": "T1499",
+			"tactic": "impact",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1614",
+			"tactic": "discovery",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1132",
+			"tactic": "command-and-control",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1598",
+			"tactic": "reconnaissance",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1496",
+			"tactic": "impact",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
 			"techniqueID": "T1585",
 			"tactic": "resource-development",
-			"score": 2,
 			"color": "",
-			"comment": "Operation Ghost",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1585.003",
-			"tactic": "resource-development",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1585.002",
-			"tactic": "resource-development",
-			"score": 2,
-			"color": "",
-			"comment": "Operation Ghost",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1585.001",
@@ -4391,62 +2335,17 @@
 		{
 			"techniqueID": "T1588",
 			"tactic": "resource-development",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1588.006",
-			"tactic": "resource-development",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1588.005",
-			"tactic": "resource-development",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1588.007",
-			"tactic": "resource-development",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1588.004",
-			"tactic": "resource-development",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1588.002",
 			"tactic": "resource-development",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -4455,97 +2354,30 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1588.003",
-			"tactic": "resource-development",
-			"score": 0,
+			"techniqueID": "T1569",
+			"tactic": "execution",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1588.001",
-			"tactic": "resource-development",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1213",
 			"tactic": "collection",
-			"score": 2,
+			"score": 1,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1213.003",
 			"tactic": "collection",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1213.006",
-			"tactic": "collection",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1213.005",
-			"tactic": "collection",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1213.004",
-			"tactic": "collection",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1213.002",
-			"tactic": "collection",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1213.001",
-			"tactic": "collection",
-			"score": 2,
+			"score": 1,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -4556,40 +2388,17 @@
 		{
 			"techniqueID": "T1505",
 			"tactic": "persistence",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1505.002",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1505.004",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1505.003",
 			"tactic": "persistence",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -4598,86 +2407,70 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1505.005",
-			"tactic": "persistence",
-			"score": 0,
+			"techniqueID": "T1485",
+			"tactic": "impact",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1505.006",
-			"tactic": "persistence",
-			"score": 0,
+			"techniqueID": "T1498",
+			"tactic": "impact",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1505.001",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1651",
 			"tactic": "execution",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
 			"showSubtechniques": false
+		},
+		{
+			"techniqueID": "T1134",
+			"tactic": "stealth",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1134",
+			"tactic": "privilege-escalation",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1136",
 			"tactic": "persistence",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1136.003",
 			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1136.001",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1136.002",
-			"tactic": "persistence",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -4697,6 +2490,26 @@
 			"showSubtechniques": false
 		},
 		{
+			"techniqueID": "T1518",
+			"tactic": "discovery",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
+			"techniqueID": "T1052",
+			"tactic": "exfiltration",
+			"color": "",
+			"comment": "",
+			"enabled": true,
+			"metadata": [],
+			"links": [],
+			"showSubtechniques": true
+		},
+		{
 			"techniqueID": "T1105",
 			"tactic": "command-and-control",
 			"score": 2,
@@ -4710,7 +2523,7 @@
 		{
 			"techniqueID": "T1665",
 			"tactic": "command-and-control",
-			"score": 1,
+			"score": 2,
 			"color": "",
 			"comment": "Solar Winds",
 			"enabled": true,
@@ -4721,24 +2534,22 @@
 		{
 			"techniqueID": "T1484",
 			"tactic": "defense-impairment",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1484",
 			"tactic": "privilege-escalation",
-			"score": 2,
 			"color": "",
-			"comment": "Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1484.002",
@@ -4753,28 +2564,6 @@
 		},
 		{
 			"techniqueID": "T1484.002",
-			"tactic": "privilege-escalation",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1484.001",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1484.001",
 			"tactic": "privilege-escalation",
 			"score": 2,
 			"color": "",
@@ -4787,42 +2576,19 @@
 		{
 			"techniqueID": "T1587",
 			"tactic": "resource-development",
-			"score": 3,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1587.002",
-			"tactic": "resource-development",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1587.003",
 			"tactic": "resource-development",
-			"score": 3,
+			"score": 1,
 			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1587.004",
-			"tactic": "resource-development",
-			"score": 3,
-			"color": "",
-			"comment": "Operation Ghost, Solar Winds",
+			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
@@ -4848,40 +2614,7 @@
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1686.003",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1686.001",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1686.002",
-			"tactic": "defense-impairment",
-			"score": 2,
-			"color": "",
-			"comment": "Solar Winds",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1680",
@@ -4897,238 +2630,37 @@
 		{
 			"techniqueID": "T1556",
 			"tactic": "defense-impairment",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1556",
 			"tactic": "persistence",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1556",
 			"tactic": "credential-access",
-			"score": 0,
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.004",
-			"tactic": "defense-impairment",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.004",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.004",
-			"tactic": "credential-access",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.001",
-			"tactic": "defense-impairment",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.001",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.001",
-			"tactic": "credential-access",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.009",
-			"tactic": "defense-impairment",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.009",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.009",
-			"tactic": "credential-access",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.008",
-			"tactic": "defense-impairment",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.008",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.008",
-			"tactic": "credential-access",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.002",
-			"tactic": "defense-impairment",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.002",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.002",
-			"tactic": "credential-access",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.006",
-			"tactic": "defense-impairment",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.006",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.006",
-			"tactic": "credential-access",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
 			"techniqueID": "T1556.007",
 			"tactic": "defense-impairment",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -5139,7 +2671,7 @@
 		{
 			"techniqueID": "T1556.007",
 			"tactic": "persistence",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -5150,7 +2682,7 @@
 		{
 			"techniqueID": "T1556.007",
 			"tactic": "credential-access",
-			"score": 0,
+			"score": 1,
 			"color": "",
 			"comment": "",
 			"enabled": true,
@@ -5159,70 +2691,34 @@
 			"showSubtechniques": false
 		},
 		{
-			"techniqueID": "T1556.005",
-			"tactic": "defense-impairment",
-			"score": 0,
+			"techniqueID": "T1216",
+			"tactic": "stealth",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1556.005",
-			"tactic": "persistence",
-			"score": 0,
+			"techniqueID": "T1127",
+			"tactic": "stealth",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		},
 		{
-			"techniqueID": "T1556.005",
-			"tactic": "credential-access",
-			"score": 0,
+			"techniqueID": "T1127",
+			"tactic": "execution",
 			"color": "",
 			"comment": "",
 			"enabled": true,
 			"metadata": [],
 			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.003",
-			"tactic": "defense-impairment",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.003",
-			"tactic": "persistence",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
-		},
-		{
-			"techniqueID": "T1556.003",
-			"tactic": "credential-access",
-			"score": 0,
-			"color": "",
-			"comment": "",
-			"enabled": true,
-			"metadata": [],
-			"links": [],
-			"showSubtechniques": false
+			"showSubtechniques": true
 		}
 	],
 	"gradient": {
@@ -5232,7 +2728,7 @@
 			"#50808eff",
 			"#62466bff"
 		],
-		"minValue": 1,
+		"minValue": 0,
 		"maxValue": 4
 	},
 	"legendItems": [],
@@ -5241,6 +2737,6 @@
 	"showTacticRowBackground": false,
 	"tacticRowBackground": "#dddddd",
 	"selectTechniquesAcrossTactics": true,
-	"selectSubtechniquesWithParent": true,
+	"selectSubtechniquesWithParent": false,
 	"selectVisibleTechniques": false
 }
